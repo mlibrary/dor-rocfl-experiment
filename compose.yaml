@@ -1,0 +1,18 @@
+---
+services:
+  app:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+      target: development
+      args:
+        UID: ${UID:-1001}
+        GID: ${UID:-1001}
+    hostname: app.local
+    networks:
+      default:
+        aliases: ["app"]
+    volumes:
+      - ./:/app
+networks:
+  default:
