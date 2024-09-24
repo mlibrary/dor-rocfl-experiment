@@ -28,5 +28,12 @@
 [global]
 author_name = "Default Name"
 author_address = "mailto:default_name@example.com"
-root = "/var/tmp/repos/default/storage"
-staging_root = "/var/tmp/repos/default/staging"
+root = "/repos/default/storage"
+staging_root = "/repos/default/staging"
+
+[fix-1_0]
+root = "/repos/fixtures/1.0/good-objects"
+
+[fix-1_1]
+root = "/repos/fixtures/1.1/good-objects"
+

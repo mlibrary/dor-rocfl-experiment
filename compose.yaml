@@ -7,12 +7,15 @@ services:
       target: development
       args:
         UID: ${UID:-1001}
-        GID: ${UID:-1001}
+        GID: ${GID:-1001}
     hostname: app.local
     networks:
       default:
         aliases: ["app"]
     volumes:
       - ./:/app
+      - repos:/repos
+volumes:
+  repos:
 networks:
   default:
