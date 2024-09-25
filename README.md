@@ -1,6 +1,16 @@
 # dor-rocfl-experiment
 An experiment using [rocfl](https://github.com/pwinckles/rocfl?tab=readme-ov-file) to manipulate [OCFL](https://ocfl.io/) to implement Digital Object Repository (DOR) functionality and utilities.
 
+## Dockerfile
+The `Dockerfile` uses the [mlibrary rocfl package](https://github.com/mlibrary/rocfl/pkgs/container/rocfl%2Frocfl) as the base image. This is an image built from the [mlibrary fork of rocfl](https://github.com/mlibrary/rocfl) allowing a layer of indirection for custom code changes and bug fixes that have been pushed up stream but not yet merged. (See [README-UMICH.md](https://github.com/mlibrary/rocfl/blob/umich/README-UMICH.md) for additional information.)
+```
+FROM ghcr.io/mlibrary/rocfl/rocfl:latest AS base
+```
+You'll need to be log in to `ghcr.io` from docker inorder to build the image locally.
+```
+docker login ghcr.io --username <GitHub username> --password <GitHub token  a.k.a. ghp_...>
+```
+
 ## Docker Compose
 The `Dockerfile` creates the `app` user whose home directory is `/app` and is mapped to the local project directory in `compose.yaml`.
 ```

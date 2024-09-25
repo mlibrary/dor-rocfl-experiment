@@ -1,4 +1,4 @@
-FROM ubuntu AS base
+FROM ghcr.io/mlibrary/rocfl/rocfl:latest AS base
 
 ARG UNAME=app
 ARG UID=1000
